@@ -1,0 +1,74 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages><package name="WebAnalytics" type="Module" version="1.0.0">
+  <friendlyName>Web Analytics</friendlyName>
+  <description>Web Analytics</description>
+  <iconFile />
+  <owner>
+    <name>Hotcakes Commerce, LLC</name>
+    <organization>Hotcakes Commerce, LLC</organization>
+    <url>www.hotcakescommerce.com</url>
+    <email>info@hotcakescommerce.com</email>
+  </owner>
+  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+  <releaseNotes>This package has no Release Notes.</releaseNotes>
+  <components>
+    <component type="Script">
+      <scripts>
+        <basePath>DesktopModules\HCC\WebAnalytics</basePath>
+        <script type="Install">
+          <path>Scripts</path>
+          <name>01.00.00.sql</name>
+          <version>01.00.00</version>
+        </script>
+      </scripts>
+    </component>
+    <component type="Module">
+      <desktopModule>
+        <moduleName>WebAnalytics</moduleName>
+        <foldername>HCC/WebAnalytics</foldername>
+        <businessControllerClass />
+        <supportedFeatures />
+        <moduleDefinitions>
+          <moduleDefinition>
+            <friendlyName>Web Analytics</friendlyName>
+            <definitionName>WebAnalytics</definitionName>
+            <defaultCacheTime>0</defaultCacheTime>
+            <moduleControls>
+              <moduleControl>
+                <controlKey />
+                <controlSrc>DesktopModules/HCC/WebAnalytics/View.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>View</controlType>
+                <iconFile />
+                <helpUrl />
+                <supportsPopUps>False</supportsPopUps>
+                <viewOrder>0</viewOrder>
+              </moduleControl>
+            </moduleControls>
+          </moduleDefinition>
+        </moduleDefinitions>
+      </desktopModule>
+    </component>
+    <component type="Assembly">
+      <assemblies>
+        <basePath>bin</basePath>
+        <assembly>
+          <name>HCC.WebAnalytics.dll</name>
+        </assembly>
+        <assembly>
+          <name>DotNetNuke.Services.GeoIP.dll</name>
+        </assembly>
+      </assemblies>
+    </component>
+    <component type="File">
+      <files>
+        <basePath>DesktopModules\HCC\WebAnalytics</basePath>
+        <file>
+          <name>View.ascx</name>
+        </file>
+      </files>
+    </component>
+  </components>
+</package></packages>
+</dotnetnuke>

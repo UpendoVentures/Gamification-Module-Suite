@@ -1,0 +1,73 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages><package name="Personalization" type="Module" version="1.0.0">
+  <friendlyName>Personalization</friendlyName>
+  <description>Personalization</description>
+  <iconFile />
+  <owner>
+    <name>Hotcakes Commerce, LLC</name>
+    <organization>Hotcakes Commerce, LLC</organization>
+    <url>http://www.hotcakescommerce.com</url>
+    <email>info@hotcakescommerce.com</email>
+  </owner>
+  <license />
+  <releaseNotes />
+  <components>
+    <component type="Module">
+      <desktopModule>
+        <moduleName>Personalization</moduleName>
+        <foldername>HCC/Personalization</foldername>
+        <businessControllerClass />
+        <supportedFeatures />
+        <moduleDefinitions>
+          <moduleDefinition>
+            <friendlyName>Personalization</friendlyName>
+            <definitionName>Personalization</definitionName>
+            <defaultCacheTime>0</defaultCacheTime>
+            <moduleControls>
+              <moduleControl>
+                <controlKey />
+                <controlSrc>desktopmodules/hcc/personalization/View.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>View</controlType>
+                <iconFile />
+                <helpUrl />
+                <supportsPopUps>False</supportsPopUps>
+              </moduleControl>
+              <moduleControl>
+                <controlKey>Edit</controlKey>
+                <controlSrc>desktopmodules/hcc/personalization/Edit.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>Edit</controlType>
+                <iconFile />
+                <helpUrl />
+                <supportsPopUps>True</supportsPopUps>
+              </moduleControl>
+            </moduleControls>
+          </moduleDefinition>
+        </moduleDefinitions>
+      </desktopModule>
+    </component>
+    <component type="Assembly">
+      <assemblies>
+        <basePath>bin</basePath>
+        <assembly>
+          <name>HCC.Personalization.dll</name>
+        </assembly>
+      </assemblies>
+    </component>
+    <component type="File">
+      <files>
+        <basePath>DesktopModules\HCC\Personalization</basePath>
+        <file>
+          <name>Edit.ascx</name>
+        </file>
+        <file>
+          <name>View.ascx</name>
+        </file>
+      </files>
+    </component>
+  </components>
+</package></packages>
+</dotnetnuke>
