@@ -1,8 +1,0 @@
-.CommunityMetrics table {width: 75%; margin: 0px auto;}
-.CommunityMetrics th {vertical-align: middle; white-space: nowrap;}
-.CommunityMetrics td {vertical-align: middle; white-space: nowrap; height: 40px;}
-.CommunityMetrics td.score {text-align: center;}
-
-@media screen and (max-width: 500px) {
-    .CommunityMetrics td.joined {display:none;}	
-}
