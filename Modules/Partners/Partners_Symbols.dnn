@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dotnetnuke type="Package" version="6.0">
+  <packages>
+    <package name="Partners" type="Library" version="01.00.00">
+      <friendlyName>Partners Module Symbols</friendlyName>
+      <description><![CDATA[Partners]]></description>
+      <owner>
+        <name>Upendo Ventures</name>
+        <organization>Upendo Ventures</organization>
+        <url>https://www.dnnsoftware.com/</url>
+        <email></email>
+      </owner>
+      <license src="License.txt" />
+      <releaseNotes src="ReleaseNotes.txt" />
+      <azureCompatible>True</azureCompatible>
+      <dependencies>
+        <dependency type="managedPackage" version="1.0.0">Partners</dependency>
+      </dependencies>
+
+      <components>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath></basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+      </components>
+    </package>
+  </packages>
+</dotnetnuke>
