@@ -41,6 +41,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <Import Project="..\..\Build\SolutionReferences.targets" />
   <ItemGroup>
     <Reference Include="DotNetNuke, Version=9.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DotNetNuke.Core.9.3.0\lib\net45\DotNetNuke.dll</HintPath>
@@ -92,8 +93,10 @@
     <Content Include="View.ascx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Module.build" />
     <None Include="packages.config" />
     <Content Include="web.config" />
+    <Content Include="VisitorsOnline.dnn" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -121,11 +124,5 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  <Import Project="Module.Build" />
 </Project>
