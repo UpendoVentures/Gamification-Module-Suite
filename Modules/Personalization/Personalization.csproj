@@ -44,9 +44,11 @@
   <Import Project="..\..\Build\SolutionReferences.targets" />
   <ItemGroup>
     <Reference Include="DotNetNuke, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\DotNetNuke.Core.9.9.0\lib\net45\DotNetNuke.dll</HintPath>
     </Reference>
     <Reference Include="DotNetNuke.Abstractions, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\DotNetNuke.Abstractions.9.9.0\lib\netstandard2.0\DotNetNuke.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="DotNetNuke.DependencyInjection, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -57,12 +59,6 @@
     </Reference>
     <Reference Include="DotNetNuke.log4net, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DotNetNuke.Instrumentation.9.9.0\lib\net45\DotNetNuke.log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetNuke.Web, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.Web.9.9.0\lib\net45\DotNetNuke.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetNuke.WebUtility, Version=4.2.1.783, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.Web.9.9.0\lib\net45\DotNetNuke.WebUtility.dll</HintPath>
     </Reference>
     <Reference Include="FiftyOne.Foundation, Version=3.2.3.2, Culture=neutral, PublicKeyToken=e967ae578dabd98e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -92,7 +88,8 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\References\WebMatrix\WebMatrix.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
