@@ -31,6 +31,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Viewsets", "Viewsets", "{C5228275-B3D3-4550-A755-98F70CDCEA69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Partners", "Modules\Partners\Partners.csproj", "{7D051970-8CED-42A5-8283-903697F98C31}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EC88034-E28A-486F-94C3-7634735CD5C9} = {4EC88034-E28A-486F-94C3-7634735CD5C9}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Showcase", "Modules\Showcase\Showcase.csproj", "{4EC88034-E28A-486F-94C3-7634735CD5C9}"
 EndProject
