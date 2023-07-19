@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HCC.WebAnalytics</RootNamespace>
     <AssemblyName>HCC.WebAnalytics</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -43,8 +43,17 @@
   </PropertyGroup>
   <Import Project="..\..\Build\SolutionReferences.targets" />
   <ItemGroup>
-    <Reference Include="DotNetNuke, Version=9.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.Core.9.3.0\lib\net45\DotNetNuke.dll</HintPath>
+    <Reference Include="DotNetNuke, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.Core.9.9.0\lib\net45\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.DependencyInjection, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.DependencyInjection.9.9.0\lib\netstandard2.0\DotNetNuke.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Instrumentation, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.Instrumentation.9.9.0\lib\net45\DotNetNuke.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.log4net, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetNuke.Instrumentation.9.9.0\lib\net45\DotNetNuke.log4net.dll</HintPath>
     </Reference>
     <Reference Include="FiftyOne.Foundation, Version=3.2.3.2, Culture=neutral, PublicKeyToken=e967ae578dabd98e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -57,9 +66,15 @@
       <HintPath>..\..\packages\MaxMind.GeoIP2.3.0.0\lib\net45\MaxMind.GeoIP2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.Core.9.3.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+      <HintPath>..\..\packages\DotNetNuke.Core.9.9.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.2.1.1\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.1.1\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
