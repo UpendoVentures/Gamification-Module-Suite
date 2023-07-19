@@ -63,7 +63,7 @@
     </Reference>
     <Reference Include="HCC.Showcase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\bin\HCC.Showcase.dll</HintPath>
+      <HintPath>..\..\bin\HCC.Showcase.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DotNetNuke.Core.9.9.0\lib\net45\Microsoft.ApplicationBlocks.Data.dll</HintPath>
