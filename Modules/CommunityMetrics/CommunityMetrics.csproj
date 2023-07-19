@@ -46,16 +46,12 @@
   <Import Project="..\..\Build\SolutionReferences.targets" />
   <ItemGroup>
     <Reference Include="DotNetNuke, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\DotNetNuke.Core.9.9.0\lib\net45\DotNetNuke.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetNuke.DependencyInjection, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.DependencyInjection.9.9.0\lib\netstandard2.0\DotNetNuke.DependencyInjection.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetNuke.Instrumentation, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.Instrumentation.9.9.0\lib\net45\DotNetNuke.Instrumentation.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetNuke.log4net, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\DotNetNuke.Instrumentation.9.9.0\lib\net45\DotNetNuke.log4net.dll</HintPath>
+    <Reference Include="DotNetNuke.Abstractions, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\DotNetNuke.Abstractions.9.9.0\lib\netstandard2.0\DotNetNuke.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Hammock.ClientProfile.1.0.0\lib\Hammock.ClientProfile.dll</HintPath>
