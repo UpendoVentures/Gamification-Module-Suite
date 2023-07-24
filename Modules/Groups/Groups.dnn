@@ -16,7 +16,7 @@
       <scripts>
         <basePath>DesktopModules\HCC\Groups</basePath>
         <script type="Install">
-          <path>Scripts</path>
+          <path>DataProviders\SqlDataProvider</path>
           <name>01.00.00.sql</name>
           <version>01.00.00</version>
         </script>

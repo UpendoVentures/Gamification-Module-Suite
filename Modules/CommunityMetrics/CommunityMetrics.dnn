@@ -16,7 +16,7 @@
       <scripts>
         <basePath>DesktopModules\HCC\CommunityMetrics</basePath>
         <script type="Install">
-          <path>Scripts</path>
+          <path>DataProviders\SqlDataProvider</path>
           <name>01.00.00.SqlDataProvider</name>
           <version>01.00.00</version>
         </script>
@@ -73,7 +73,7 @@
     </component>
     <component type="Assembly">
       <assemblies>
-        <basePath>bin</basePath>
+        <basePath>../../bin</basePath>
         <assembly>
           <name>HCC.CommunityMetrics.dll</name>
         </assembly>
