@@ -10,8 +10,9 @@ using WebMatrix.Data;
 using DotNetNuke.Entities.Portals;
 using System.Collections;
 using DotNetNuke.Data;
-using FiftyOne.Foundation.Mobile.Detection;
+using DeviceDetectorNET;
 using MaxMind.GeoIP2;
+using DeviceDetectorNET.Parser;
 
 namespace HCC.WebAnalytics
 {
@@ -185,31 +186,61 @@ namespace HCC.WebAnalytics
             // get user agent properties
             if (!string.IsNullOrEmpty(objVisitor.UserAgent))
             {
-                var objDevice = WebProvider.ActiveProvider.Match(objVisitor.UserAgent);
+                DeviceDetector.SetVersionTruncation(VersionTruncation.VERSION_TRUNCATION_NONE);
+                var userAgent = objVisitor.UserAgent; 
+                
+                var dd = new DeviceDetector(userAgent);
+                dd.SkipBotDetection();
+                dd.Parse();
+
+                if (dd.IsMobile())
+                {
+                    objVisitor.DeviceType = "Mobile";
+                }
+
+                if (dd.GetBrandName() != null && dd.GetBrandName() != "Unknown")
+                {
+                    objVisitor.Device += dd.GetBrandName();
+                }
+
+                if (dd.GetModel() != null && dd.GetModel() != "Unknown")
+                {
+                    objVisitor.Device += dd.GetModel();
+                }
+
+                if (objVisitor.Device == "")
+                {
+                    objVisitor.Device = "Unavailable";
+                }
+
+                var osInfo = dd.GetOs();
+
+                if (osInfo.Match.ToString() != null && osInfo.Match.ToString() != "Unknown")
+                {
+                    objVisitor.Platform += osInfo.Match.ToString(); // only available in Premium Data
+                }
+
+                if (objVisitor.Platform == "")
+                {
+                    objVisitor.Platform = "Unavailable";
+                }
+
+                var clientInfo = dd.GetClient();
+
+                if (clientInfo.Match != null && clientInfo.Match.ToString() != "Unknown")
+                {
+                    objVisitor.Browser += clientInfo.Match.ToString(); // only available in Premium Data
+                }
+
+                if (objVisitor.Browser == "")
+                {
+                    objVisitor.Browser = "Unavailable";
+                }
+
+                /*var objDevice = WebProvider.ActiveProvider.Match(objVisitor.UserAgent);
                 if (objDevice != null)
                 {
-                    if (objDevice["IsMobile"] != null && objDevice["IsMobile"].ToString() == "True")
-                    {
-                        objVisitor.DeviceType = "Mobile";
-                    }
-
-                    if (objDevice["HardwareVendor"] != null && objDevice["HardwareVendor"].ToString() != "Unknown")
-                    {
-                        objVisitor.Device += objDevice["HardwareVendor"].ToString(); // only available in Premium Data
-                    }
-                    if (objDevice["HardwareModel"] != null && objDevice["HardwareModel"].ToString() != "Unknown")
-                    {
-                        objVisitor.Device += objDevice["HardwareModel"]; // only available in Premium Data
-                    }
-                    if (objVisitor.Device == "")
-                    {
-                        objVisitor.Device = "Unavailable";
-                    }
-
-                    if (objDevice["PlatformVendor"] != null && objDevice["PlatformVendor"].ToString() != "Unknown")
-                    {
-                        objVisitor.Platform += objDevice["PlatformVendor"] + " "; // only available in Premium Data
-                    }
+                   
                     if (objDevice["PlatformName"] != null && objDevice["PlatformName"].ToString() != "Unknown")
                     {
                         objVisitor.Platform += objDevice["PlatformName"] + " ";
@@ -218,10 +249,7 @@ namespace HCC.WebAnalytics
                     {
                         objVisitor.Platform += objDevice["PlatformVersion"];
                     }
-                    if (objVisitor.Platform == "")
-                    {
-                        objVisitor.Platform = "Unavailable";
-                    }
+                    
 
                     if (objDevice["BrowserVendor"] != null && objDevice["BrowserVendor"].ToString() != "Unknown")
                     {
@@ -235,11 +263,10 @@ namespace HCC.WebAnalytics
                     {
                         objVisitor.Browser += objDevice["BrowserVersion"];
                     }
-                    if (objVisitor.Browser == "")
-                    {
-                        objVisitor.Browser = "Unavailable";
-                    }
-                }
+                    
+                }*/
+            
+            
             }
             return objVisitor;
         }
