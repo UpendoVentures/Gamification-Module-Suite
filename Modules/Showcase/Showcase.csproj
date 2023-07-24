@@ -95,7 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Edit.ascx" />
-    <Content Include="Scripts\01.00.00.sql" />
+    <None Include="SqlDataProvider\01.00.00.SqlDataProvider" />
     <Content Include="Settings.ascx" />
     <Content Include="View.ascx" />
   </ItemGroup>
@@ -103,6 +103,9 @@
     <Content Include="Module.build" />
     <None Include="packages.config" />
     <Content Include="Showcase.dnn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataProviders\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v13.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
