@@ -125,7 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Edit.ascx" />
-    <Content Include="Scripts\01.00.00.sql" />
+    <None Include="DataProviders\SqlDataProvider\01.00.00.SqlDataProvider" />
     <Content Include="Settings.ascx" />
     <Content Include="View.ascx" />
   </ItemGroup>
