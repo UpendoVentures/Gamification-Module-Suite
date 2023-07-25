@@ -1,0 +1,95 @@
+﻿<dotnetnuke type="Package" version="6.0">
+	<packages>
+		<package name="Personalization" type="Module" version="1.0.0">
+			<friendlyName>Personalization</friendlyName>
+			<description>
+				<![CDATA[<p>Personalization</p>]]>
+			</description>
+			<iconFile>DesktopModules/Personalization/Images/logo.png</iconFile>
+			<owner>
+				<name>Hotcakes Commerce, LLC</name>
+				<organization>Hotcakes Commerce, LLC</organization>
+				<url><![CDATA[<a href="https://www.hotcakescommerce.com/" target="_blank">https://www.hotcakescommerce.com/</a>]]></url>
+				<email><![CDATA[<a href="mailto:info@hotcakescommerce.com" target="_blank">info@hotcakescommerce.com</a>]]></email>
+			</owner>
+			<license />
+			<releaseNotes />
+			<dependencies>
+				<dependency type="CoreVersion">09.09.00</dependency>
+			</dependencies>
+			<components>
+				<component type="Module">
+					<desktopModule>
+						<moduleName>Personalization</moduleName>
+						<foldername>Personalization</foldername>
+						<businessControllerClass />
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>Personalization</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/Personalization/View.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle />
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Edit</controlKey>
+										<controlSrc>DesktopModules/Personalization/Edit.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Edit Partners Content</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+										<supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<name>HCC.Personalization.dll</name>
+							<path>bin</path>
+							<version>01.00.00</version>
+						</assembly>
+						<assembly>
+							<name>MaxMind.Db.dll</name>
+							<path>bin</path>
+							<version>04.00.00</version>
+						</assembly>
+						<assembly>
+							<name>MaxMind.GeoIP2.dll</name>
+							<path>bin</path>
+							<version>05.01.00</version>
+						</assembly>
+						<assembly>
+							<name>FiftyOne.Foundation.dll</name>
+							<path>bin</path>
+						</assembly>
+					</assemblies>
+				</component>
+
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\Personalization</basePath>
+						<resourceFile>
+							<name>Resources.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+
+			</components>
+		</package>
+	</packages>
+</dotnetnuke>
