@@ -1,99 +1,112 @@
-﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="Partners" type="Module" version="1.0.0">
-  <friendlyName>Partners</friendlyName>
-  <description>Partners</description>
-  <iconFile />
-  <owner>
-    <name>Hotcakes Commerce, LLC</name>
-    <organization>Hotcakes Commerce, LLC</organization>
-    <url>www.hotcakescommerce.com</url>
-    <email>info@hotcakescommerce.com</email>
-  </owner>
-  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
-  <releaseNotes>This package has no Release Notes</releaseNotes>
-  <components>
-    <component type="Script">
-      <scripts>
-        <basePath>DesktopModules\HCC\Partners</basePath>
-        <script type="Install">
-          <path>DataProviders\SqlDataProvider</path>
-          <name>01.00.00.sql</name>
-          <version>01.00.00</version>
-        </script>
-      </scripts>
-    </component>
-    <component type="Module">
-      <desktopModule>
-        <moduleName>Partners</moduleName>
-        <foldername>HCC/Partners</foldername>
-        <businessControllerClass />
-        <supportedFeatures />
-        <moduleDefinitions>
-          <moduleDefinition>
-            <friendlyName>Partners</friendlyName>
-            <definitionName>Partners</definitionName>
-            <defaultCacheTime>0</defaultCacheTime>
-            <moduleControls>
-              <moduleControl>
-                <controlKey />
-                <controlSrc>desktopmodules/hcc/partners/View.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>View</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>False</supportsPopUps>
-                <viewOrder>0</viewOrder>
-              </moduleControl>
-              <moduleControl>
-                <controlKey>Edit</controlKey>
-                <controlSrc>desktopmodules/hcc/partners/Edit.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>Edit</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>True</supportsPopUps>
-                <viewOrder>0</viewOrder>
-              </moduleControl>
-              <moduleControl>
-                <controlKey>Settings</controlKey>
-                <controlSrc>desktopmodules/hcc/partners/Settings.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>Edit</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>False</supportsPopUps>
-                <viewOrder>0</viewOrder>
-              </moduleControl>
-            </moduleControls>
-          </moduleDefinition>
-        </moduleDefinitions>
-      </desktopModule>
-    </component>
-    <component type="Assembly">
-      <assemblies>
-        <basePath>bin</basePath>
-        <assembly>
-          <name>HCC.Partners.dll</name>
-        </assembly>
-      </assemblies>
-    </component>
-    <component type="File">
-      <files>
-        <basePath>DesktopModules\HCC\Partners</basePath>
-        <file>
-          <name>Edit.ascx</name>
-        </file>
-        <file>
-          <name>Settings.ascx</name>
-        </file>
-        <file>
-          <name>View.ascx</name>
-        </file>
-      </files>
-    </component>
-  </components>
-</package></packages>
+﻿<dotnetnuke type="Package" version="6.0">
+	<packages>
+		<package name="Partners" type="Module" version="1.0.0">
+			<friendlyName>Partners</friendlyName>
+			<description>
+				<![CDATA[<p>Partners</p>]]>
+			</description>
+			<iconFile>DesktopModules/Partners/Images/logo.png</iconFile>
+			<owner>
+				<name>Hotcakes Commerce, LLC</name>
+				<organization>Hotcakes Commerce, LLC</organization>
+				<url><![CDATA[<a href="https://www.hotcakescommerce.com/" target="_blank">https://www.hotcakescommerce.com/</a>]]></url>
+				<email><![CDATA[<a href="mailto:info@hotcakescommerce.com" target="_blank">info@hotcakescommerce.com</a>]]></email>
+			</owner>
+			<license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+			<releaseNotes>This package has no Release Notes</releaseNotes>
+			<dependencies>
+				<dependency type="CoreVersion">09.09.00</dependency>
+			</dependencies>
+			<components>
+				<component type="Script">
+					<scripts>
+						<basePath>DesktopModules\Partners</basePath>
+						<script type="Install">
+							<path>Providers\DataProviders\SqlDataProvider</path>
+							<name>01.00.00.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+						<script type="UnInstall">
+							<path>Providers\DataProviders\SqlDataProvider</path>
+							<name>Uninstall.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+					</scripts>
+				</component>
+
+				<component type="Module">
+					<desktopModule>
+						<moduleName>Partners</moduleName>
+						<foldername>Partners</foldername>
+						<businessControllerClass />
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>Partners</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/Partners/View.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle />
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Edit</controlKey>
+										<controlSrc>DesktopModules/Partners/Edit.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Edit Partners Content</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+										<supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Settings</controlKey>
+										<controlSrc>DesktopModules/Partners/Settings.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Partners Settings</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl />
+										<supportsPopUps>False</supportsPopUps>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<name>HCC.Partners.dll</name>
+							<path>bin</path>
+							<version>01.00.00</version>
+						</assembly>
+						<assembly>
+							<name>HCC.Showcase.dll</name>
+							<path>bin</path>
+							<version>01.00.00</version>
+						</assembly>
+					</assemblies>
+				</component>
+
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\Partners</basePath>
+						<resourceFile>
+							<name>Resources.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+
+			</components>
+		</package>
+	</packages>
 </dotnetnuke>

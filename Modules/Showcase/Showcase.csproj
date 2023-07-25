@@ -36,7 +36,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Website\bin\</OutputPath>
+    <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -95,18 +95,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Edit.ascx" />
-    <None Include="SqlDataProvider\01.00.00.SqlDataProvider" />
+    <None Include="Providers\DataProviders\SqlDataProvider\01.00.00.SqlDataProvider" />
     <Content Include="Settings.ascx" />
     <Content Include="View.ascx" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
+    <Content Include="Showcase.dnn" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Module.build" />
     <None Include="packages.config" />
-    <Content Include="Showcase.dnn" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataProviders\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v13.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
