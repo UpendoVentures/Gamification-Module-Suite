@@ -1,74 +1,100 @@
-﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="WebAnalytics" type="Module" version="1.0.0">
-  <friendlyName>Web Analytics</friendlyName>
-  <description>Web Analytics</description>
-  <iconFile />
-  <owner>
-    <name>Hotcakes Commerce, LLC</name>
-    <organization>Hotcakes Commerce, LLC</organization>
-    <url>www.hotcakescommerce.com</url>
-    <email>info@hotcakescommerce.com</email>
-  </owner>
-  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
-  <releaseNotes>This package has no Release Notes.</releaseNotes>
-  <components>
-    <component type="Script">
-      <scripts>
-        <basePath>DesktopModules\HCC\WebAnalytics</basePath>
-        <script type="Install">
-          <path>Scripts</path>
-          <name>01.00.00.sql</name>
-          <version>01.00.00</version>
-        </script>
-      </scripts>
-    </component>
-    <component type="Module">
-      <desktopModule>
-        <moduleName>WebAnalytics</moduleName>
-        <foldername>HCC/WebAnalytics</foldername>
-        <businessControllerClass />
-        <supportedFeatures />
-        <moduleDefinitions>
-          <moduleDefinition>
-            <friendlyName>Web Analytics</friendlyName>
-            <definitionName>WebAnalytics</definitionName>
-            <defaultCacheTime>0</defaultCacheTime>
-            <moduleControls>
-              <moduleControl>
-                <controlKey />
-                <controlSrc>DesktopModules/HCC/WebAnalytics/View.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>View</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>False</supportsPopUps>
-                <viewOrder>0</viewOrder>
-              </moduleControl>
-            </moduleControls>
-          </moduleDefinition>
-        </moduleDefinitions>
-      </desktopModule>
-    </component>
-    <component type="Assembly">
-      <assemblies>
-        <basePath>bin</basePath>
-        <assembly>
-          <name>HCC.WebAnalytics.dll</name>
-        </assembly>
-        <assembly>
-          <name>DotNetNuke.Services.GeoIP.dll</name>
-        </assembly>
-      </assemblies>
-    </component>
-    <component type="File">
-      <files>
-        <basePath>DesktopModules\HCC\WebAnalytics</basePath>
-        <file>
-          <name>View.ascx</name>
-        </file>
-      </files>
-    </component>
-  </components>
-</package></packages>
+﻿<dotnetnuke type="Package" version="6.0">
+	<packages>
+		<package name="WebAnalytics" type="Module" version="1.0.0">
+			<friendlyName>WebAnalytics</friendlyName>
+			<description>
+				<![CDATA[<p>WebAnalytics</p>]]>
+			</description>
+			<iconFile>DesktopModules/WebAnalytics/Images/logo.png</iconFile>
+			<owner>
+				<name>Hotcakes Commerce, LLC</name>
+				<organization>Hotcakes Commerce, LLC</organization>
+				<url><![CDATA[<a href="https://www.hotcakescommerce.com/" target="_blank">https://www.hotcakescommerce.com/</a>]]></url>
+				<email><![CDATA[<a href="mailto:info@hotcakescommerce.com" target="_blank">info@hotcakescommerce.com</a>]]></email>
+			</owner>
+			<license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+			<releaseNotes>This package has no Release Notes.</releaseNotes>
+			<dependencies>
+				<dependency type="CoreVersion">09.09.00</dependency>
+			</dependencies>
+			<components>
+				<component type="Script">
+					<scripts>
+						<basePath>DesktopModules\WebAnalytics</basePath>
+						<script type="Install">
+							<path>Providers\DataProviders\SqlDataProvider</path>
+							<name>01.00.00.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+						<script type="UnInstall">
+							<path>Providers\DataProviders\SqlDataProvider</path>
+							<name>Uninstall.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+					</scripts>
+				</component>
+
+				<component type="Module">
+					<desktopModule>
+						<moduleName>WebAnalytics</moduleName>
+						<foldername>WebAnalytics</foldername>
+						<businessControllerClass />
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>WebAnalytics</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/WebAnalytics/View.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle />
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+									</moduleControl>									
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<name>HCC.WebAnalytics.dll</name>
+							<path>bin</path>
+							<version>01.00.00</version>
+						</assembly>
+						<assembly>
+							<name>MaxMind.Db.dll</name>
+							<path>bin</path>
+							<version>04.00.00</version>
+						</assembly>
+						<assembly>
+							<name>MaxMind.GeoIP2.dll</name>
+							<path>bin</path>
+							<version>05.01.00</version>
+						</assembly>
+						<assembly>
+							<name>FiftyOne.Foundation.dll</name>
+							<path>bin</path>
+						</assembly>
+					</assemblies>
+				</component>
+
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\WebAnalytics</basePath>
+						<resourceFile>
+							<name>Resources.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+
+			</components>
+		</package>
+	</packages>
 </dotnetnuke>

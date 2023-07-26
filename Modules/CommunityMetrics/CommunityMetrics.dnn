@@ -1,107 +1,117 @@
-﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="CommunityMetrics" type="Module" version="1.0.0">
-  <friendlyName>Community Metrics</friendlyName>
-  <description>Community Metrics</description>
-  <iconFile />
-  <owner>
-    <name>Hotcakes Commerce, LLC</name>
-    <organization>Hotcakes Commerce, LLC</organization>
-    <url>www.hotcakescommerce.com</url>
-    <email>info@hotcakescommerce.com</email>
-  </owner>
-  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
-  <releaseNotes>This package has no Release Notes</releaseNotes>
-  <components>
-    <component type="Script">
-      <scripts>
-        <basePath>DesktopModules\HCC\CommunityMetrics</basePath>
-        <script type="Install">
-          <path>Scripts</path>
-          <name>01.00.00.sql</name>
-          <version>01.00.00</version>
-        </script>
-      </scripts>
-    </component>
-    <component type="Module">
-      <desktopModule>
-        <moduleName>CommunityMetrics</moduleName>
-        <foldername>HCC/CommunityMetrics</foldername>
-        <businessControllerClass />
-        <supportedFeatures />
-        <moduleDefinitions>
-          <moduleDefinition>
-            <friendlyName>Community Metrics</friendlyName>
-            <definitionName>CommunityMetrics</definitionName>
-            <defaultCacheTime>0</defaultCacheTime>
-            <moduleControls>
-              <moduleControl>
-                <controlKey />
-                <controlSrc>desktopmodules/hcc/communitymetrics/View.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>View</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>False</supportsPopUps>
-                <viewOrder>0</viewOrder>
-              </moduleControl>
-              <moduleControl>
-                <controlKey>Edit</controlKey>
-                <controlSrc>desktopmodules/hcc/communitymetrics/Edit.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>Edit</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>True</supportsPopUps>
-                <viewOrder>0</viewOrder>
-              </moduleControl>
-              <moduleControl>
-                <controlKey>Settings</controlKey>
-                <controlSrc>desktopmodules/hcc/communitymetrics/Settings.ascx</controlSrc>
-                <supportsPartialRendering>False</supportsPartialRendering>
-                <controlTitle />
-                <controlType>View</controlType>
-                <iconFile />
-                <helpUrl />
-                <supportsPopUps>False</supportsPopUps>
-              </moduleControl>
-            </moduleControls>
-          </moduleDefinition>
-        </moduleDefinitions>
-      </desktopModule>
-    </component>
-    <component type="Assembly">
-      <assemblies>
-        <basePath>bin</basePath>
-        <assembly>
-          <name>HCC.CommunityMetrics.dll</name>
-        </assembly>
-        <assembly>
-          <name>Hammock.ClientProfile.dll</name>
-        </assembly>
-        <assembly>
-          <name>Octokit.dll</name>
-        </assembly>
-        <assembly>
-          <name>TweetSharp.dll</name>
-        </assembly>
-      </assemblies>
-    </component>
-    <component type="File">
-      <files>
-        <basePath>DesktopModules\HCC\CommunityMetrics</basePath>
-        <file>
-          <name>Edit.ascx</name>
-        </file>
-        <file>
-          <name>Settings.ascx</name>
-        </file>
-        <file>
-          <name>View.ascx</name>
-        </file>
-      </files>
-    </component>
-  </components>
-</package></packages>
+﻿<dotnetnuke type="Package" version="6.0">
+	<packages>
+		<package name="CommunityMetrics" type="Module" version="1.0.0">
+			<friendlyName>Community Metrics</friendlyName>
+			<description>
+				<![CDATA[<p>Community Metrics</p>]]>
+			</description>
+			<iconFile>DesktopModules/CommunityMetrics/Images/logo.png</iconFile>
+			<owner>
+				<name>Hotcakes Commerce, LLC</name>
+				<organization>Hotcakes Commerce, LLC</organization>
+				<url><![CDATA[<a href="https://www.hotcakescommerce.com/" target="_blank">https://www.hotcakescommerce.com/</a>]]></url>
+				<email><![CDATA[<a href="mailto:info@hotcakescommerce.com" target="_blank">info@hotcakescommerce.com</a>]]></email>
+			</owner>
+			<license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+			<releaseNotes>This package has no Release Notes</releaseNotes>
+			<dependencies>
+				<dependency type="CoreVersion">09.09.00</dependency>
+			</dependencies>
+			<components>
+				<component type="Script">
+					<scripts>
+						<basePath>DesktopModules\CommunityMetrics</basePath>
+						<script type="Install">
+							<path>Providers\DataProviders\SqlDataProvider</path>
+							<name>01.00.00.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+						<script type="UnInstall">
+							<path>Providers\DataProviders\SqlDataProvider</path>
+							<name>Uninstall.SqlDataProvider</name>
+							<version>01.00.00</version>
+						</script>
+					</scripts>
+				</component>
+
+				<component type="Module">
+					<desktopModule>
+						<moduleName>CommunityMetrics</moduleName>
+						<foldername>CommunityMetrics</foldername>
+						<businessControllerClass />
+						<supportedFeatures />
+						<moduleDefinitions>
+							<moduleDefinition>
+								<friendlyName>Community Metrics</friendlyName>
+								<defaultCacheTime>0</defaultCacheTime>
+								<moduleControls>
+									<moduleControl>
+										<controlKey />
+										<controlSrc>DesktopModules/CommunityMetrics/View.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle />
+										<controlType>View</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Edit</controlKey>
+										<controlSrc>DesktopModules/CommunityMetrics/Edit.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Edit CommunityMetrics Content</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl />
+										<viewOrder>0</viewOrder>
+										<supportsPopUps>True</supportsPopUps>
+									</moduleControl>
+									<moduleControl>
+										<controlKey>Settings</controlKey>
+										<controlSrc>DesktopModules/CommunityMetrics/Settings.ascx</controlSrc>
+										<supportsPartialRendering>False</supportsPartialRendering>
+										<controlTitle>Community Metrics Settings</controlTitle>
+										<controlType>Edit</controlType>
+										<iconFile />
+										<helpUrl />
+										<supportsPopUps>False</supportsPopUps>
+									</moduleControl>
+								</moduleControls>
+							</moduleDefinition>
+						</moduleDefinitions>
+					</desktopModule>
+				</component>
+
+				<component type="Assembly">
+					<assemblies>
+						<assembly>
+							<name>HCC.CommunityMetrics.dll</name>
+							<path>bin</path>
+							<version>01.00.00</version>
+						</assembly>
+						<assembly>
+							<name>Hammock.ClientProfile.dll</name>
+							<path>bin</path>
+							<version>01.00.00</version>
+						</assembly>
+						<assembly>
+							<name>Octokit.dll</name>
+							<path>bin</path>
+							<version>00.40.00</version>
+						</assembly>
+					</assemblies>
+				</component>
+
+				<component type="ResourceFile">
+					<resourceFiles>
+						<basePath>DesktopModules\CommunityMetrics</basePath>
+						<resourceFile>
+							<name>Resources.zip</name>
+						</resourceFile>
+					</resourceFiles>
+				</component>
+
+			</components>
+		</package>
+	</packages>
 </dotnetnuke>

@@ -38,7 +38,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\</OutputPath>
+    <OutputPath>bin</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -137,17 +137,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Edit.ascx" />
-    <Content Include="Scripts\01.00.00.sql" />
+    <Content Include="Groups.dnn" />
+    <None Include="Providers\DataProviders\SqlDataProvider\01.00.00.SqlDataProvider" />
     <Content Include="Settings.ascx" />
     <Content Include="View.ascx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Groups.dnn" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Module.build" />
     <None Include="packages.config" />
     <Content Include="web.config" />
+    <Content Include="Providers\DataProviders\SqlDataProvider\Uninstall.SqlDataProvider" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
