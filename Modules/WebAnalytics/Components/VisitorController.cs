@@ -215,9 +215,9 @@ namespace HCC.WebAnalytics
 
                 var osInfo = dd.GetOs();
 
-                if (osInfo.Match.ToString() != null && osInfo.Match.ToString() != "Unknown")
+                if (osInfo.Match.Platform != null && osInfo.Match.Platform != "Unknown")
                 {
-                    objVisitor.Platform += osInfo.Match.ToString(); // only available in Premium Data
+                    objVisitor.Platform += osInfo.Match.Platform; // only available in Premium Data
                 }
 
                 if (objVisitor.Platform == "")
@@ -227,9 +227,9 @@ namespace HCC.WebAnalytics
 
                 var clientInfo = dd.GetClient();
 
-                if (clientInfo.Match != null && clientInfo.Match.ToString() != "Unknown")
+                if (clientInfo.Match.Name != null && clientInfo.Match.Name != "Unknown")
                 {
-                    objVisitor.Browser += clientInfo.Match.ToString(); // only available in Premium Data
+                    objVisitor.Browser += clientInfo.Match.Name; // only available in Premium Data
                 }
 
                 if (objVisitor.Browser == "")
