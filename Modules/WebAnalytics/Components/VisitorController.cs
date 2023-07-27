@@ -236,37 +236,6 @@ namespace HCC.WebAnalytics
                 {
                     objVisitor.Browser = "Unavailable";
                 }
-
-                /*var objDevice = WebProvider.ActiveProvider.Match(objVisitor.UserAgent);
-                if (objDevice != null)
-                {
-                   
-                    if (objDevice["PlatformName"] != null && objDevice["PlatformName"].ToString() != "Unknown")
-                    {
-                        objVisitor.Platform += objDevice["PlatformName"] + " ";
-                    }
-                    if (objDevice["PlatformVersion"] != null && objDevice["PlatformVersion"].ToString() != "Unknown")
-                    {
-                        objVisitor.Platform += objDevice["PlatformVersion"];
-                    }
-                    
-
-                    if (objDevice["BrowserVendor"] != null && objDevice["BrowserVendor"].ToString() != "Unknown")
-                    {
-                        objVisitor.Browser += objDevice["BrowserVendor"] + " "; // only available in Premium Data
-                    }
-                    if (objDevice["BrowserName"] != null && objDevice["BrowserName"].ToString() != "Unknown")
-                    {
-                        objVisitor.Browser += objDevice["BrowserName"] + " ";
-                    }
-                    if (objDevice["BrowserVersion"] != null && objDevice["BrowserVersion"].ToString() != "Unknown")
-                    {
-                        objVisitor.Browser += objDevice["BrowserVersion"];
-                    }
-                    
-                }*/
-            
-            
             }
             return objVisitor;
         }
