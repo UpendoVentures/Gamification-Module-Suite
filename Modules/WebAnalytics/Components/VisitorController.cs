@@ -10,8 +10,9 @@ using WebMatrix.Data;
 using DotNetNuke.Entities.Portals;
 using System.Collections;
 using DotNetNuke.Data;
-using FiftyOne.Foundation.Mobile.Detection;
+using DeviceDetectorNET;
 using MaxMind.GeoIP2;
+using DeviceDetectorNET.Parser;
 
 namespace HCC.WebAnalytics
 {
@@ -185,60 +186,55 @@ namespace HCC.WebAnalytics
             // get user agent properties
             if (!string.IsNullOrEmpty(objVisitor.UserAgent))
             {
-                var objDevice = WebProvider.ActiveProvider.Match(objVisitor.UserAgent);
-                if (objDevice != null)
+                DeviceDetector.SetVersionTruncation(VersionTruncation.VERSION_TRUNCATION_NONE);
+                var userAgent = objVisitor.UserAgent; 
+                
+                var dd = new DeviceDetector(userAgent);
+                dd.SkipBotDetection();
+                dd.Parse();
+
+                if (dd.IsMobile())
                 {
-                    if (objDevice["IsMobile"] != null && objDevice["IsMobile"].ToString() == "True")
-                    {
-                        objVisitor.DeviceType = "Mobile";
-                    }
+                    objVisitor.DeviceType = "Mobile";
+                }
 
-                    if (objDevice["HardwareVendor"] != null && objDevice["HardwareVendor"].ToString() != "Unknown")
-                    {
-                        objVisitor.Device += objDevice["HardwareVendor"].ToString(); // only available in Premium Data
-                    }
-                    if (objDevice["HardwareModel"] != null && objDevice["HardwareModel"].ToString() != "Unknown")
-                    {
-                        objVisitor.Device += objDevice["HardwareModel"]; // only available in Premium Data
-                    }
-                    if (objVisitor.Device == "")
-                    {
-                        objVisitor.Device = "Unavailable";
-                    }
+                if (dd.GetBrandName() != null && dd.GetBrandName() != "Unknown")
+                {
+                    objVisitor.Device += dd.GetBrandName();
+                }
 
-                    if (objDevice["PlatformVendor"] != null && objDevice["PlatformVendor"].ToString() != "Unknown")
-                    {
-                        objVisitor.Platform += objDevice["PlatformVendor"] + " "; // only available in Premium Data
-                    }
-                    if (objDevice["PlatformName"] != null && objDevice["PlatformName"].ToString() != "Unknown")
-                    {
-                        objVisitor.Platform += objDevice["PlatformName"] + " ";
-                    }
-                    if (objDevice["PlatformVersion"] != null && objDevice["PlatformVersion"].ToString() != "Unknown")
-                    {
-                        objVisitor.Platform += objDevice["PlatformVersion"];
-                    }
-                    if (objVisitor.Platform == "")
-                    {
-                        objVisitor.Platform = "Unavailable";
-                    }
+                if (dd.GetModel() != null && dd.GetModel() != "Unknown")
+                {
+                    objVisitor.Device += dd.GetModel();
+                }
 
-                    if (objDevice["BrowserVendor"] != null && objDevice["BrowserVendor"].ToString() != "Unknown")
-                    {
-                        objVisitor.Browser += objDevice["BrowserVendor"] + " "; // only available in Premium Data
-                    }
-                    if (objDevice["BrowserName"] != null && objDevice["BrowserName"].ToString() != "Unknown")
-                    {
-                        objVisitor.Browser += objDevice["BrowserName"] + " ";
-                    }
-                    if (objDevice["BrowserVersion"] != null && objDevice["BrowserVersion"].ToString() != "Unknown")
-                    {
-                        objVisitor.Browser += objDevice["BrowserVersion"];
-                    }
-                    if (objVisitor.Browser == "")
-                    {
-                        objVisitor.Browser = "Unavailable";
-                    }
+                if (objVisitor.Device == "")
+                {
+                    objVisitor.Device = "Unavailable";
+                }
+
+                var osInfo = dd.GetOs();
+
+                if (osInfo.Match.Platform != null && osInfo.Match.Platform != "Unknown")
+                {
+                    objVisitor.Platform += osInfo.Match.Platform; // only available in Premium Data
+                }
+
+                if (objVisitor.Platform == "")
+                {
+                    objVisitor.Platform = "Unavailable";
+                }
+
+                var clientInfo = dd.GetClient();
+
+                if (clientInfo.Match.Name != null && clientInfo.Match.Name != "Unknown")
+                {
+                    objVisitor.Browser += clientInfo.Match.Name; // only available in Premium Data
+                }
+
+                if (objVisitor.Browser == "")
+                {
+                    objVisitor.Browser = "Unavailable";
                 }
             }
             return objVisitor;

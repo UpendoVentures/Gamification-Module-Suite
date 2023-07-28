@@ -45,6 +45,9 @@
   </PropertyGroup>
   <Import Project="..\..\Build\SolutionReferences.targets" />
   <ItemGroup>
+    <Reference Include="DeviceDetector.NET, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DeviceDetector.NET.4.2.0\lib\netstandard2.0\DeviceDetector.NET.dll</HintPath>
+    </Reference>
     <Reference Include="DotNetNuke, Version=9.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DotNetNuke.Core.9.9.0\lib\net45\DotNetNuke.dll</HintPath>
     </Reference>
@@ -59,9 +62,6 @@
     </Reference>
     <Reference Include="DotNetNuke.log4net, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\DotNetNuke.Instrumentation.9.9.0\lib\net45\DotNetNuke.log4net.dll</HintPath>
-    </Reference>
-    <Reference Include="FiftyOne.Foundation">
-      <HintPath>..\..\References\FiftyOne.Foundation\FiftyOne.Foundation.dll</HintPath>
     </Reference>
     <Reference Include="MaxMind.Db, Version=4.0.0.0, Culture=neutral, PublicKeyToken=66afa4cc5ae853ac, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MaxMind.Db.4.0.0\lib\netstandard2.0\MaxMind.Db.dll</HintPath>
@@ -121,6 +121,9 @@
     <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\References\WebMatrix\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet, Version=8.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\YamlDotNet.8.1.2\lib\net45\YamlDotNet.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -74,7 +74,7 @@
 							<version>05.01.00</version>
 						</assembly>
 						<assembly>
-							<name>FiftyOne.Foundation.dll</name>
+							<name>DeviceDetector.NET.dll</name>
 							<path>bin</path>
 						</assembly>
 					</assemblies>

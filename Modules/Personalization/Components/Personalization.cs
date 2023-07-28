@@ -3,10 +3,13 @@ using DotNetNuke.Entities.Modules;
 using DotNetNuke.Entities.Portals;
 using DotNetNuke.Security.Permissions;
 using System.Web;
-using FiftyOne.Foundation.Mobile.Detection;
+using DeviceDetectorNET;
 using WebMatrix.Data;
 using MaxMind.GeoIP2;
 using System;
+using DeviceDetectorNET.Parser;
+using DeviceDetectorNET.Results;
+using DeviceDetectorNET.Results.Client;
 
 namespace HCC.Personalization
 {
@@ -66,16 +69,63 @@ namespace HCC.Personalization
                 switch (strType.ToUpper())
                 {
                     case "DEVICE":
-                        var objDevice = WebProvider.ActiveProvider.Match(HttpContext.Current.Request.UserAgent);
-                        if (objDevice != null && objDevice[strKey] != null)
-                        {
-                            Evaluate = CheckValue(strValue, strCondition, objDevice[strKey].ToString());
-                        }
-                        else
-                        {
-                            Evaluate = false;
-                        }
+                        Evaluate = false;
 
+                        if (!string.IsNullOrEmpty(strKey))
+                        {
+                            string deviceprop = string.Empty;
+
+                            DeviceDetector.SetVersionTruncation(VersionTruncation.VERSION_TRUNCATION_NONE);
+                            var userAgent = HttpContext.Current.Request.UserAgent;
+                            var dd = new DeviceDetector(userAgent);
+                            dd.SkipBotDetection();
+                            dd.Parse();
+
+                            ParseResult<OsMatchResult> osInfo;
+                            ParseResult<ClientMatchResult> clientInfo;
+
+                            switch (strKey)
+                            {
+                                case "HardwareVendor":
+                                    deviceprop = dd.GetBrandName();
+                                    break;
+                                case "HardwareModel":
+                                    deviceprop = dd.GetModel();
+                                    break;
+                                case "PlatformVendor":
+                                    osInfo = dd.GetOs();
+                                    deviceprop = osInfo.Match.Platform;
+                                    break;
+                                case "PlatformName":
+                                    osInfo = dd.GetOs();
+                                    deviceprop = osInfo.Match.Name;
+                                    break;
+                                case "PlatformVersion":
+                                    osInfo = dd.GetOs();
+                                    deviceprop = osInfo.Match.Version;
+                                    break;
+                                case "BrowserVendor":
+                                    clientInfo = dd.GetClient();
+                                    deviceprop = clientInfo.Match.Name;
+                                    break;
+                                case "BrowserName":
+                                    clientInfo = dd.GetClient();
+                                    deviceprop = clientInfo.Match.Name;
+                                    break;
+                                case "BrowserVersion":
+                                    clientInfo = dd.GetClient();
+                                    deviceprop = clientInfo.Match.Version;
+                                    break;
+                                case "IsMobile":
+                                    deviceprop = dd.IsMobile().ToString();
+                                    break;
+                            }
+
+                            if (!string.IsNullOrEmpty(deviceprop))
+                            {
+                                Evaluate = CheckValue(strValue, strCondition, deviceprop);
+                            }                            
+                        }                      
                         break;
                     case "USERAGENT":
                         Evaluate = CheckValue(strValue, strCondition, HttpContext.Current.Request.UserAgent);
