@@ -1,4 +1,4 @@
-# Gamification Module Suite for DNN  
+# Gamification Module Suite for DNN 🕹️  
 
 This suite of modules will help you and your team build out a community that's based on merit and activity.  You'll be able to measure and event bounty various activities on your DNN-based website, to help encourage and even incentivize engagement of the content and features on your website.  
 
